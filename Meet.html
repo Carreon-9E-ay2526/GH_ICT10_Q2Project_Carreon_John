@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meet the Creator</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet"
+    href="https://pyscript.net/releases/2026.7.3/core.css">
+
+    <script type="module"
+    src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Baloo+2:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0 15px 80px;
+            background: #c8e9ec;
+            font-family: 'Baloo 2', sans-serif;
+            color: #293d59;
+        }
+
+
+        /* NAVBAR */
+
+        header {
+            margin: 0 -15px;
+            background-color: #263b59 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd85c !important;
+        }
+
+
+        /* MAIN POSTER */
+
+        .poster {
+            position: relative;
+            overflow: hidden;
+            max-width: 650px;
+            min-height: 750px;
+            margin: auto;
+            padding: 30px;
+            background: #c8e9ec;
+        }
+
+
+        /* SCHOOL */
+
+        .school {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .school span {
+            display: block;
+            font-size: 15px;
+        }
+
+
+        /* DECORATIONS */
+
+        .decoration {
+            position: absolute;
+            font-size: 50px;
+        }
+
+        .butterfly {
+            top: 20px;
+            left: 15px;
+        }
+
+        .honey {
+            top: 20px;
+            right: 15px;
+        }
+
+
+        /* WHITE PAPER */
+
+        .paper {
+            position: relative;
+            margin-top: 45px;
+            padding: 45px 30px;
+            min-height: 600px;
+            text-align: center;
+            background: #fffefa;
+            border-radius: 45% 45% 25px 25px / 8% 8% 25px 25px;
+        }
+
+
+        /* TITLE */
+
+        h1 {
+            margin: 15px 0 10px;
+            color: #d74767;
+            font-family: 'Fredoka', sans-serif;
+            font-size: clamp(42px, 9vw, 65px);
+            font-weight: 700;
+            line-height: 0.95;
+        }
+
+
+        .tagline {
+            color: #5999e8;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+
+        /* DIVIDER */
+
+        .divider {
+            margin: 25px 0;
+            border-top: 4px dotted #293d59;
+        }
+
+
+        /* CREATOR CARD */
+
+        .creator-card {
+            max-width: 450px;
+            margin: auto;
+            padding: 25px;
+            background: #eef8f8;
+            border-radius: 25px;
+        }
+
+
+        /* PROFILE */
+
+        .profile-circle {
+            width: 130px;
+            height: 130px;
+            margin: auto;
+            border-radius: 50%;
+            background: #c8e9ec;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+
+            border: 5px solid #f8d66d;
+        }
+
+
+        h2 {
+            margin-top: 20px;
+            color: #df5c6e;
+            font-size: 30px;
+        }
+
+
+        .creator-info {
+            color: #293d59;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        .creator-info strong {
+            color: #d74767;
+        }
+
+
+        /* ABOUT SECTION */
+
+        .about {
+            margin-top: 25px;
+            padding: 18px;
+            background: #fff8df;
+            border-left: 5px solid #f2c94c;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+
+        .about-title {
+            color: #d74767;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+        /* DECORATIVE FOOD */
+
+        .cooking {
+            margin-top: 25px;
+            font-size: 38px;
+            letter-spacing: 5px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #263b59 !important;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 450px) {
+
+            .poster {
+                padding: 15px;
+            }
+
+            .paper {
+                padding: 40px 15px;
+            }
+
+            .school {
+                font-size: 16px;
+            }
+
+            .school span {
+                font-size: 13px;
+            }
+
+            .decoration {
+                font-size: 35px;
+            }
+
+            .tagline {
+                font-size: 19px;
+            }
+
+            .profile-circle {
+                width: 110px;
+                height: 110px;
+                font-size: 45px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+        <ul class="navbar-nav me-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="Checker.html">
+                    Club Member Checker
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Table.html">
+                    Element Checke
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Member.html">
+                    School Club Members
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Meet.html">
+                    Meet the Creator
+                </a>
+            </li>
+
+        </ul>
+
+    </header>
+
+
+
+    <!-- MAIN POSTER -->
+
+    <div class="poster">
+
+
+        <!-- SCHOOL -->
+
+        <div class="school">
+
+            OB MONTESSORI CENTER
+
+            <span>
+                Junior High School Department
+            </span>
+
+        </div>
+
+
+        <!-- DECORATIONS -->
+
+        <div class="decoration butterfly">
+            🦋
+        </div>
+
+        <div class="decoration honey">
+            🍯
+        </div>
+
+
+
+        <!-- WHITE PAPER -->
+
+        <main class="paper">
+
+
+            <!-- TITLE -->
+
+            <h1>
+                MEET THE<br>
+                CREATOR
+            </h1>
+
+
+            <p class="tagline">
+                The person behind Rainbow Catering Website!
+            </p>
+
+
+            <div class="divider"></div>
+
+
+
+            <!-- CREATOR -->
+
+            <div class="creator-card">
+
+
+                <!-- PROFILE ICON -->
+
+            <img src="JC.png" width="100px" height="100px" style="border-radius: 50%; object-fit: cover;">
+
+                <!-- NAME -->
+
+                <h2>
+                    JC O. Carreon
+                </h2>
+
+
+                <!-- BASIC INFORMATION -->
+
+                <div class="creator-info">
+
+                    <p>
+                        <strong>Grade:</strong>
+                        10 Emerald
+                    </p>
+                </div>
+
+
+                <!-- ABOUT -->
+
+                <div class="about">
+
+                    <div class="about-title">
+                        About the Me
+                    </div>
+
+                    <p>
+                        Interests: Video editing, Bunnys, Coding, Photography, Cooking, And Romcom.<br>
+                        Hobbies:Cooking, Gaming, Watching Romcom Anime, Chating with friends, and Waking my dog.<br>
+                        Dreams: Be a Chef, Be a ICT/TLE Teacher, And Be a Professional Photography<br><br>
+                    </p>
+                    <p style="text-align: center;">
+                        "May the force be with you"
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="divider"></div>
+
+
+
+
+            <!-- FOOD -->
+
+            <div class="cooking">
+                👩‍🍳 🧁 🍓
+            </div>
+
+            <footer class="text-center py-3 bg-dark text-light mt-auto fixed-bottom">
+                Rainbow Catering | 10 Emerald &copy; 2026
+            </footer>
+
+        </main>
+
+    </div>
